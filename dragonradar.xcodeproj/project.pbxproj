@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B68135122BF3A141009270E7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68135112BF3A141009270E7 /* MapView.swift */; };
+		B68135132BF3A141009270E7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68135112BF3A141009270E7 /* MapView.swift */; };
+		B68135152BF3A896009270E7 /* GameOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68135142BF3A896009270E7 /* GameOptionsView.swift */; };
+		B68135162BF3A896009270E7 /* GameOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68135142BF3A896009270E7 /* GameOptionsView.swift */; };
+		B681351B2BF3A8FF009270E7 /* ListGamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B681351A2BF3A8FF009270E7 /* ListGamesView.swift */; };
+		B681351C2BF3A8FF009270E7 /* ListGamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B681351A2BF3A8FF009270E7 /* ListGamesView.swift */; };
+		B681351E2BF3A9A4009270E7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B681351D2BF3A9A4009270E7 /* Game.swift */; };
+		B681351F2BF3A9A4009270E7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B681351D2BF3A9A4009270E7 /* Game.swift */; };
 		B6ACAE2A2BF247C200281285 /* dragonradarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACAE292BF247C100281285 /* dragonradarApp.swift */; };
 		B6ACAE2C2BF247C200281285 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACAE2B2BF247C200281285 /* ContentView.swift */; };
 		B6ACAE2E2BF247C200281285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6ACAE2D2BF247C200281285 /* Assets.xcassets */; };
@@ -43,6 +51,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B68135112BF3A141009270E7 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		B68135142BF3A896009270E7 /* GameOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOptionsView.swift; sourceTree = "<group>"; };
+		B681351A2BF3A8FF009270E7 /* ListGamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGamesView.swift; sourceTree = "<group>"; };
+		B681351D2BF3A9A4009270E7 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		B6ACAE262BF247C100281285 /* dragonradar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dragonradar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6ACAE292BF247C100281285 /* dragonradarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dragonradarApp.swift; sourceTree = "<group>"; };
 		B6ACAE2B2BF247C200281285 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,11 +86,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B68135102BF3A121009270E7 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				B68135142BF3A896009270E7 /* GameOptionsView.swift */,
+				B681351A2BF3A8FF009270E7 /* ListGamesView.swift */,
+				B68135112BF3A141009270E7 /* MapView.swift */,
+				B681351D2BF3A9A4009270E7 /* Game.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		B6ACAE1D2BF247C100281285 = {
 			isa = PBXGroup;
 			children = (
 				B6ACAE4D2BF2492800281285 /* README.md */,
 				B6ACAE282BF247C100281285 /* dragonradar */,
+				B68135102BF3A121009270E7 /* Shared */,
 				B6ACAE3A2BF247C200281285 /* dragonradar Watch App */,
 				B6ACAE272BF247C100281285 /* Products */,
 			);
@@ -234,6 +258,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6ACAE2C2BF247C200281285 /* ContentView.swift in Sources */,
+				B681351E2BF3A9A4009270E7 /* Game.swift in Sources */,
+				B68135152BF3A896009270E7 /* GameOptionsView.swift in Sources */,
+				B681351B2BF3A8FF009270E7 /* ListGamesView.swift in Sources */,
+				B68135122BF3A141009270E7 /* MapView.swift in Sources */,
 				B6ACAE2A2BF247C200281285 /* dragonradarApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,6 +271,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6ACAE3E2BF247C200281285 /* ContentView.swift in Sources */,
+				B681351F2BF3A9A4009270E7 /* Game.swift in Sources */,
+				B68135162BF3A896009270E7 /* GameOptionsView.swift in Sources */,
+				B681351C2BF3A8FF009270E7 /* ListGamesView.swift in Sources */,
+				B68135132BF3A141009270E7 /* MapView.swift in Sources */,
 				B6ACAE3C2BF247C200281285 /* dragonradarApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
