@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showingPopover = false
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -16,13 +18,17 @@ struct ContentView: View {
                     .resizable(resizingMode: .stretch)
                     .aspectRatio(contentMode: .fit)
                 VStack {
-                    NavigationLink(destination: GameOptionsView()) {
-                        Text("New Game")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .padding()
+                    Button("New Game") {
+                        showingPopover = true
                     }
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .padding()
+                    .popover(isPresented: $showingPopover) {
+                        GameOptionsView()
+                    }
+
                     NavigationLink(destination: ListGamesView()) {
                         Text("Previous Games")
                             .font(.title)
@@ -31,7 +37,9 @@ struct ContentView: View {
                             .padding()
                     }
                 }
-            }.background(Color.black)
+            }
+            .background(Color.black)
+            .edgesIgnoringSafeArea(.all)
         }
     }
 }

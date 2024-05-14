@@ -9,8 +9,21 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
+    
     var body: some View {
-        Map()
+        GeometryReader { geometry in
+            ZStack {
+                Map()
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+                Image("marquee")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+                    .clipped()
+                    .allowsHitTesting(false)  // Esto permite que los toques pasen a través de la imagen
+            }
+        }
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
