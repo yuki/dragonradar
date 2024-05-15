@@ -14,7 +14,17 @@ struct GameDetail: View {
     var body: some View {
         ScrollView {
             #if os(iOS)
-                Map().frame(height: 300)
+            Map {
+                ForEach(game.balls) { ball in
+                    Annotation("", coordinate: ball.locationCoordinate) {
+                        Image("d"+"\(ball.id)")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: 30)
+                    }
+                }
+            }.frame(height: 300)
+            
             #endif
             VStack(alignment: .leading) {
                 Text("Ended: \(game.end.formatted())")
@@ -25,6 +35,9 @@ struct GameDetail: View {
                 ForEach(game.balls) { ball in
                     HStack() {
                         Image("d"+"\(ball.id)")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: 50)
                         Text("\(ball.found.formatted())")
                     }
                 }
