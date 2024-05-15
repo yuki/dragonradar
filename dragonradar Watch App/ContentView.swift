@@ -17,7 +17,7 @@ struct ContentView: View {
                         Text("New Game")
                             .bold()
                     }
-                    NavigationLink(destination: ListGamesView()) {
+                    NavigationLink(destination: GamesList()) {
                         Text("Previous Games")
                             .bold()
                     }

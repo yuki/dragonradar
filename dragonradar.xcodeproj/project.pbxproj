@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6103E772BF4B4DA005EC543 /* GameDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6103E762BF4B4DA005EC543 /* GameDetail.swift */; };
+		B63C09A72BF4AC3100B5EB34 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63C09A62BF4AC3100B5EB34 /* ModelData.swift */; };
+		B63C09A82BF4AC3100B5EB34 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63C09A62BF4AC3100B5EB34 /* ModelData.swift */; };
+		B63C09A92BF4AC7400B5EB34 /* games.json in Resources */ = {isa = PBXBuildFile; fileRef = B63C09A52BF4A8CC00B5EB34 /* games.json */; };
+		B63C09AA2BF4AC7500B5EB34 /* games.json in Resources */ = {isa = PBXBuildFile; fileRef = B63C09A52BF4A8CC00B5EB34 /* games.json */; };
+		B63C09AC2BF4B0CD00B5EB34 /* GameRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63C09AB2BF4B0CD00B5EB34 /* GameRow.swift */; };
+		B63C09AD2BF4B0CD00B5EB34 /* GameRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63C09AB2BF4B0CD00B5EB34 /* GameRow.swift */; };
 		B68135122BF3A141009270E7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68135112BF3A141009270E7 /* MapView.swift */; };
 		B68135132BF3A141009270E7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68135112BF3A141009270E7 /* MapView.swift */; };
 		B68135152BF3A896009270E7 /* GameOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68135142BF3A896009270E7 /* GameOptionsView.swift */; };
 		B68135162BF3A896009270E7 /* GameOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68135142BF3A896009270E7 /* GameOptionsView.swift */; };
-		B681351B2BF3A8FF009270E7 /* ListGamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B681351A2BF3A8FF009270E7 /* ListGamesView.swift */; };
-		B681351C2BF3A8FF009270E7 /* ListGamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B681351A2BF3A8FF009270E7 /* ListGamesView.swift */; };
+		B681351B2BF3A8FF009270E7 /* GamesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B681351A2BF3A8FF009270E7 /* GamesList.swift */; };
 		B681351E2BF3A9A4009270E7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B681351D2BF3A9A4009270E7 /* Game.swift */; };
 		B681351F2BF3A9A4009270E7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B681351D2BF3A9A4009270E7 /* Game.swift */; };
+		B69B595B2BF512B400B1D0DD /* GamesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B681351A2BF3A8FF009270E7 /* GamesList.swift */; };
+		B69B595C2BF512B800B1D0DD /* GameDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6103E762BF4B4DA005EC543 /* GameDetail.swift */; };
 		B6ACAE2A2BF247C200281285 /* dragonradarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACAE292BF247C100281285 /* dragonradarApp.swift */; };
 		B6ACAE2C2BF247C200281285 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ACAE2B2BF247C200281285 /* ContentView.swift */; };
 		B6ACAE2E2BF247C200281285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6ACAE2D2BF247C200281285 /* Assets.xcassets */; };
@@ -51,9 +59,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B6103E762BF4B4DA005EC543 /* GameDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetail.swift; sourceTree = "<group>"; };
+		B63C09A52BF4A8CC00B5EB34 /* games.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = games.json; sourceTree = "<group>"; };
+		B63C09A62BF4AC3100B5EB34 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		B63C09AB2BF4B0CD00B5EB34 /* GameRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRow.swift; sourceTree = "<group>"; };
 		B68135112BF3A141009270E7 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B68135142BF3A896009270E7 /* GameOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOptionsView.swift; sourceTree = "<group>"; };
-		B681351A2BF3A8FF009270E7 /* ListGamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGamesView.swift; sourceTree = "<group>"; };
+		B681351A2BF3A8FF009270E7 /* GamesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesList.swift; sourceTree = "<group>"; };
 		B681351D2BF3A9A4009270E7 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		B6ACAE262BF247C100281285 /* dragonradar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dragonradar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6ACAE292BF247C100281285 /* dragonradarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dragonradarApp.swift; sourceTree = "<group>"; };
@@ -86,13 +98,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B68135102BF3A121009270E7 /* Shared */ = {
+		B63C09A22BF4A88F00B5EB34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				B68135142BF3A896009270E7 /* GameOptionsView.swift */,
-				B681351A2BF3A8FF009270E7 /* ListGamesView.swift */,
+				B681351A2BF3A8FF009270E7 /* GamesList.swift */,
+				B63C09AB2BF4B0CD00B5EB34 /* GameRow.swift */,
+				B6103E762BF4B4DA005EC543 /* GameDetail.swift */,
 				B68135112BF3A141009270E7 /* MapView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B63C09A32BF4A89C00B5EB34 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				B681351D2BF3A9A4009270E7 /* Game.swift */,
+				B63C09A62BF4AC3100B5EB34 /* ModelData.swift */,
+				B63C09A42BF4A8B000B5EB34 /* Resources */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B63C09A42BF4A8B000B5EB34 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B63C09A52BF4A8CC00B5EB34 /* games.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B68135102BF3A121009270E7 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				B63C09A32BF4A89C00B5EB34 /* Model */,
+				B63C09A22BF4A88F00B5EB34 /* Views */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -237,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6ACAE312BF247C200281285 /* Preview Assets.xcassets in Resources */,
+				B63C09A92BF4AC7400B5EB34 /* games.json in Resources */,
 				B6ACAE2E2BF247C200281285 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6ACAE432BF247C300281285 /* Preview Assets.xcassets in Resources */,
+				B63C09AA2BF4AC7500B5EB34 /* games.json in Resources */,
 				B6ACAE402BF247C300281285 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,10 +301,13 @@
 			files = (
 				B6ACAE2C2BF247C200281285 /* ContentView.swift in Sources */,
 				B681351E2BF3A9A4009270E7 /* Game.swift in Sources */,
+				B63C09AC2BF4B0CD00B5EB34 /* GameRow.swift in Sources */,
 				B68135152BF3A896009270E7 /* GameOptionsView.swift in Sources */,
-				B681351B2BF3A8FF009270E7 /* ListGamesView.swift in Sources */,
+				B681351B2BF3A8FF009270E7 /* GamesList.swift in Sources */,
 				B68135122BF3A141009270E7 /* MapView.swift in Sources */,
 				B6ACAE2A2BF247C200281285 /* dragonradarApp.swift in Sources */,
+				B6103E772BF4B4DA005EC543 /* GameDetail.swift in Sources */,
+				B63C09A72BF4AC3100B5EB34 /* ModelData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,10 +317,13 @@
 			files = (
 				B6ACAE3E2BF247C200281285 /* ContentView.swift in Sources */,
 				B681351F2BF3A9A4009270E7 /* Game.swift in Sources */,
+				B63C09AD2BF4B0CD00B5EB34 /* GameRow.swift in Sources */,
+				B69B595B2BF512B400B1D0DD /* GamesList.swift in Sources */,
 				B68135162BF3A896009270E7 /* GameOptionsView.swift in Sources */,
-				B681351C2BF3A8FF009270E7 /* ListGamesView.swift in Sources */,
 				B68135132BF3A141009270E7 /* MapView.swift in Sources */,
 				B6ACAE3C2BF247C200281285 /* dragonradarApp.swift in Sources */,
+				B69B595C2BF512B800B1D0DD /* GameDetail.swift in Sources */,
+				B63C09A82BF4AC3100B5EB34 /* ModelData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

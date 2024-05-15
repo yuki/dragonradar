@@ -29,7 +29,7 @@ struct ContentView: View {
                         GameOptionsView()
                     }
 
-                    NavigationLink(destination: ListGamesView()) {
+                    NavigationLink(destination: GamesList()) {
                         Text("Previous Games")
                             .font(.title)
                             .fontWeight(.bold)
