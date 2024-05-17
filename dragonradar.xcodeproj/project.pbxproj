@@ -14,6 +14,8 @@
 		B63C09AA2BF4AC7500B5EB34 /* games.json in Resources */ = {isa = PBXBuildFile; fileRef = B63C09A52BF4A8CC00B5EB34 /* games.json */; };
 		B63C09AC2BF4B0CD00B5EB34 /* GameRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63C09AB2BF4B0CD00B5EB34 /* GameRow.swift */; };
 		B63C09AD2BF4B0CD00B5EB34 /* GameRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63C09AB2BF4B0CD00B5EB34 /* GameRow.swift */; };
+		B6574EE02BF7BD5C00F9B841 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6574EDF2BF7BD5C00F9B841 /* LocationManager.swift */; };
+		B6574EE12BF7D57200F9B841 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6574EDF2BF7BD5C00F9B841 /* LocationManager.swift */; };
 		B668A58A2BF563B4007501B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6ACAE2D2BF247C200281285 /* Assets.xcassets */; };
 		B68135152BF3A896009270E7 /* GameOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68135142BF3A896009270E7 /* GameOptionsView.swift */; };
 		B68135162BF3A896009270E7 /* GameOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68135142BF3A896009270E7 /* GameOptionsView.swift */; };
@@ -64,6 +66,7 @@
 		B63C09A62BF4AC3100B5EB34 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		B63C09AB2BF4B0CD00B5EB34 /* GameRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRow.swift; sourceTree = "<group>"; };
 		B63C0E5A2BF56DC3008BA45E /* dragonradar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = dragonradar.entitlements; sourceTree = "<group>"; };
+		B6574EDF2BF7BD5C00F9B841 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		B68135142BF3A896009270E7 /* GameOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOptionsView.swift; sourceTree = "<group>"; };
 		B681351A2BF3A8FF009270E7 /* GamesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesList.swift; sourceTree = "<group>"; };
 		B681351D2BF3A9A4009270E7 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -132,6 +135,7 @@
 		B68135102BF3A121009270E7 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				B6574EDF2BF7BD5C00F9B841 /* LocationManager.swift */,
 				B63C09A32BF4A89C00B5EB34 /* Model */,
 				B63C09A22BF4A88F00B5EB34 /* Views */,
 			);
@@ -303,6 +307,7 @@
 			files = (
 				B6ACAE2C2BF247C200281285 /* ContentView.swift in Sources */,
 				B681351E2BF3A9A4009270E7 /* Game.swift in Sources */,
+				B6574EE02BF7BD5C00F9B841 /* LocationManager.swift in Sources */,
 				B63C09AC2BF4B0CD00B5EB34 /* GameRow.swift in Sources */,
 				B68135152BF3A896009270E7 /* GameOptionsView.swift in Sources */,
 				B681351B2BF3A8FF009270E7 /* GamesList.swift in Sources */,
@@ -319,6 +324,7 @@
 			files = (
 				B6ACAE3E2BF247C200281285 /* ContentView.swift in Sources */,
 				B681351F2BF3A9A4009270E7 /* Game.swift in Sources */,
+				B6574EE12BF7D57200F9B841 /* LocationManager.swift in Sources */,
 				B63C09AD2BF4B0CD00B5EB34 /* GameRow.swift in Sources */,
 				B69B595B2BF512B400B1D0DD /* GamesList.swift in Sources */,
 				B68135162BF3A896009270E7 /* GameOptionsView.swift in Sources */,
@@ -532,6 +538,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = dragonradar;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Necesitamos acceder a tu ubicación para mostrar el mapa.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -570,6 +578,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = dragonradar;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Necesitamos acceder a tu ubicación para mostrar el mapa.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

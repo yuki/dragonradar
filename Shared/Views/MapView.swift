@@ -9,13 +9,16 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
-    var game: Game
+    var game: Game2
+    @EnvironmentObject var locationManager: LocationManager
+    @State private var position: MapCameraPosition = .userLocation(fallback: .automatic)
 
     var body: some View {
         NavigationView {
             GeometryReader { geometry in
                 ZStack {
-                    Map{
+                    Map(position: $position){
+                        UserAnnotation()
                         ForEach(game.balls) { ball in
                             Annotation("", coordinate: ball.locationCoordinate) {
                                 Image("d"+"\(ball.id)")
@@ -25,19 +28,21 @@ struct MapView: View {
                             }
                         }
                     }
+                    .mapControls {
+                        MapUserLocationButton()
+                        MapCompass()
+                            .mapControlVisibility(.visible)
+                    }
                     .frame(width: geometry.size.width, height: geometry.size.height)
-                    #if os(iOS)
                     Image("marquee")
                         .resizable()
                         .scaledToFill()
                         .frame(width: geometry.size.width, height: geometry.size.height)
                         .clipped()
                         .allowsHitTesting(false)  // Esto permite que los toques pasen a través de la imagen
-                    #endif
                 }
             }
             .edgesIgnoringSafeArea(.all)
-
         }
         .navigationBarBackButtonHidden(true)
     }

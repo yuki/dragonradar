@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct ContentView: View {
+    @EnvironmentObject var locationManager: LocationManager
 
     var body: some View {
         NavigationView {

@@ -31,6 +31,8 @@ Cómo tiene que ser la aplicación:
 - [x] Dataset del juego:
     - [x] UUID
     - [x] Datetime de creación del juego
+    - [x] Posición inicial del jugador al crear el juego
+    - [x] Distancia elegida de juego
     - [x] ARRAY de 7 posiciones con:
         - [ ] Número de bola? (O lo saco de la posición del ARRAY?)
         - [x] Geo-posición

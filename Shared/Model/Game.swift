@@ -28,21 +28,44 @@ struct Ball: Hashable, Codable, Identifiable  {
 
 
 
-//@Model
-struct Game: Hashable, Codable, Identifiable {
+@Model
+class Game: Hashable, Identifiable {
     @Attribute(.unique) var id: UUID
+    var initial_coordinates: Coordinates
+    // TODO: distance Int or Float to be 0,5...?
+    var distance: Int
     var start: Date
     var end: Date
     var wish: String
-    var balls: [Ball]
-}
-//    init(id: UUID, start: Date, end: Date, wish: String, balls: [Ball]) {
-//        self.id = id
-//        self.start = start
-//        self.end = end
-//        self.wish = wish
+//    var balls: [Ball]
+
+    var locationCoordinate: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(
+            latitude: initial_coordinates.latitude,
+            longitude: initial_coordinates.longitude)
+    }
+
+    init(id: UUID, initial_coordinates: Coordinates, distance: Int ,start: Date, end: Date, wish: String) {
+        self.id = id
+        self.initial_coordinates = initial_coordinates
+        self.distance = distance
+        self.start = start
+        self.end = end
+        self.wish = wish
 //        self.balls = balls
-//    }
-//}
+    }
 
-
+    func create() -> Game{
+        return Game.init(
+            id: UUID(),
+            initial_coordinates: Coordinates(latitude: 43.21, longitude: -2.9388382),
+            distance: 1,
+            start: Date(),
+            end: Date(),
+            wish: ""
+//            balls: [Ball]
+        )
+//        game.id = UUID()
+//        return game
+    }
+}

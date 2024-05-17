@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GameRow: View {
-    var game: Game
+    var game: Game2
 
     var body: some View {
         HStack {

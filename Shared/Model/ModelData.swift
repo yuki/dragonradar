@@ -7,7 +7,17 @@
 
 import Foundation
 
-var games: [Game] = load("games.json")
+
+// FIXME: TEMPORAL
+struct Game2: Hashable, Decodable, Identifiable {
+    var id: UUID
+    var start: Date
+    var end: Date
+    var wish: String
+    var balls: [Ball]
+}
+
+var games: [Game2] = load("games.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

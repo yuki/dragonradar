@@ -9,22 +9,29 @@ import SwiftUI
 import MapKit
 
 struct GameDetail: View {
-    var game: Game
+    var game: Game2
 
     var body: some View {
         ScrollView {
             #if os(iOS)
-            Map {
-                ForEach(game.balls) { ball in
-                    Annotation("", coordinate: ball.locationCoordinate) {
-                        Image("d"+"\(ball.id)")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(maxWidth: 30)
+            ZStack{
+                Map {
+                    ForEach(game.balls) { ball in
+                        Annotation("", coordinate: ball.locationCoordinate) {
+                            Image("d"+"\(ball.id)")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: 30)
+                        }
                     }
+                    //FIXME: CENTRAR EL MAPA con la posición inicial del juego
                 }
-            }.frame(height: 300)
-            
+                Image("marquee")
+                    .resizable()
+                    .scaledToFill()
+                    .clipped()
+                    .allowsHitTesting(false)  // Esto permite que los toques pasen a través de la imagen
+            }
             #endif
             VStack(alignment: .leading) {
                 Text("Ended: \(game.end.formatted())")
