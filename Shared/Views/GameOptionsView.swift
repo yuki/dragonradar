@@ -9,38 +9,38 @@ import SwiftUI
 
 struct GameOptionsView: View {
     @State private var number: Int = 1
-    @Environment(\.presentationMode) var presentationMode
-    
+
     var body: some View {
-        VStack {
-            Text("Distancia de juego")
-            HStack {
-                Button(action: decrement) {
-                    Image(systemName: "minus.circle")
-                }
-                .font(.largeTitle)
-                .padding()
+        NavigationView {
+            VStack {
+                Text("Distancia de juego")
+                HStack {
+                    Button(action: decrement) {
+                        Image(systemName: "minus.circle")
+                    }
+                    .font(.largeTitle)
+                    .padding()
 
-                Text("\(number) km")
-                    .frame(width: 50)
-                Button(action: increment) {
-                    Image(systemName: "plus.circle")
+                    Text("\(number) km")
+                        .frame(width: 50)
+                    Button(action: increment) {
+                        Image(systemName: "plus.circle")
+                    }
+                    .font(.largeTitle)
+                    .padding()
                 }
-                .font(.largeTitle)
-                .padding()
-            }
 
-            Button("Empezar") {
-                presentationMode.wrappedValue.dismiss()
+                NavigationLink(destination: MapView(game: games[0])){
+                    Text("Empezar")
+                    #if os(iOS)
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    #endif
+                }.navigationBarBackButtonHidden(true)
             }
-            #if os(iOS)
-            .padding()
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .cornerRadius(10)
-            #endif
         }
-        .padding()
     }
     
     func increment() {

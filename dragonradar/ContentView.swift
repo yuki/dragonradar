@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var showingPopover = false
 
     var body: some View {
         NavigationView {
@@ -17,16 +16,14 @@ struct ContentView: View {
                 Image("dragonradar")
                     .resizable(resizingMode: .stretch)
                     .aspectRatio(contentMode: .fit)
+                    .padding(.bottom, 30.0)
                 VStack {
-                    Button("New Game") {
-                        showingPopover = true
-                    }
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .padding()
-                    .popover(isPresented: $showingPopover) {
-                        GameOptionsView()
+                    NavigationLink(destination: GameOptionsView()) {
+                        Text("New Game")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .padding()
                     }
 
                     NavigationLink(destination: GamesList()) {
