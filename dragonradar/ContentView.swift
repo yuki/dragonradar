@@ -23,7 +23,7 @@ struct ContentView: View {
                     .padding(.bottom, 30.0)
                 VStack {
                     if (games.count > 0 && games[0].start == games[0].end){
-                        NavigationLink(destination: MapView()) {
+                        NavigationLink(destination: MapView(game: games[0])) {
                             Text("Continue Game")
                                 .font(.title)
                                 .fontWeight(.bold)

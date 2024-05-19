@@ -27,7 +27,7 @@ struct Ball: Hashable, Codable, Identifiable {
 
 
 @Model
-class Game: Hashable, Identifiable {
+class Game: Hashable, Identifiable, ObservableObject {
     @Attribute(.unique) var id: UUID
     var initialCoordinates: Coordinates
     var distance: Float //guardada en km
@@ -42,22 +42,22 @@ class Game: Hashable, Identifiable {
     }
 
 
-    init(initialCoordinates: Coordinates?, distance: Float) {
+    init(initialCoordinates: Coordinates?) {
         let coordinate = LocationManager().location?.coordinate
         let startDate = Date()
         self.id = UUID()
         self.initialCoordinates = initialCoordinates ?? Coordinates(latitude: coordinate?.latitude ?? 43.2630529, longitude: coordinate?.longitude ?? -2.9351349)
-        self.distance = distance
+        self.distance = 1
         self.start = startDate
         self.end = startDate
         self.wish = ""
         self.balls = []
-        self.balls = generateBalls(initialCoordinates: self.initialCoordinates, distance: self.distance, count: 7)
+        self.balls = generateBalls(initialCoordinates: self.initialCoordinates, distance: self.distance)
     }
 
-    private func generateBalls(initialCoordinates: Coordinates, distance: Float, count: Int) -> [Ball] {
+    private func generateBalls(initialCoordinates: Coordinates, distance: Float) -> [Ball] {
         var balls = [Ball]()
-        for i in 1..<count+1 {
+        for i in 1..<7+1 {
             let randomCoordinates = generateRandomCoordinates(initialCoordinates: initialCoordinates, maxDistance: distance)
             let ball = Ball(id: i, coordinates: randomCoordinates)
             balls.append(ball)
@@ -81,5 +81,27 @@ class Game: Hashable, Identifiable {
         let newLongitude = initialCoordinates.longitude + deltaLongitude * 180 / .pi
 
         return Coordinates(latitude: newLatitude, longitude: newLongitude)
+    }
+
+    func isBallClose(userLocation: CLLocation?, ball: Ball, distance: Double?) -> Bool {
+        let ballLocation = CLLocation(latitude: ball.coordinates.latitude, longitude: ball.coordinates.longitude)
+        let distanceInMeters = userLocation?.distance(from: ballLocation)
+        return distanceInMeters ?? 5 <= (distance ?? 5)
+    }
+
+    func ballDistance(userLocation: CLLocation?, ball: Ball) -> Double {
+        let ballLocation = CLLocation(latitude: ball.coordinates.latitude, longitude: ball.coordinates.longitude)
+        return userLocation?.distance(from: ballLocation) ?? 1000
+    }
+
+    func isFinished() -> Bool{
+        var gameFinished = true
+        for i in 0..<7-1 {
+            if self.balls[i].found == nil {
+                gameFinished = false
+                break
+            }
+        }
+        return gameFinished
     }
 }

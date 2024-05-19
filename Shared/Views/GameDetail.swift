@@ -58,5 +58,5 @@ struct GameDetail: View {
 }
 
 #Preview {
-    GameRow(game: Game(initialCoordinates: Coordinates(latitude: 43.21, longitude: -2.91), distance: 1))
+    GameRow(game: Game(initialCoordinates: Coordinates(latitude: 43.21, longitude: -2.91)))
 }

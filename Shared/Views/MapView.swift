@@ -10,45 +10,65 @@ import MapKit
 import SwiftData
 
 struct MapView: View {
-    @Query(sort: \Game.start, order: .reverse) var games: [Game]
+    @State var game: Game
     @EnvironmentObject var locationManager: LocationManager
+    @Environment(\.modelContext) var context
     @State private var position: MapCameraPosition = .userLocation(fallback: .automatic)
+    @State private var showAlert: [Bool] = [false,false,false,false,false,false,false,]
 
     var body: some View {
         NavigationView {
-            GeometryReader { geometry in
-                ZStack {
-                    Map(position: $position){
-                        UserAnnotation()
-                        ForEach(games[0].balls) { ball in
-                            Annotation("", coordinate: ball.locationCoordinate) {
-                                Image("d"+"\(ball.id)")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(maxWidth: 30)
+            if game.isFinished() {
+                ShenronView()
+            } else {
+                GeometryReader { geometry in
+                    ZStack {
+                        Map(position: $position){
+                            UserAnnotation()
+                            ForEach(game.balls) { ball in
+                                if ball.found == nil {
+                                    Annotation("", coordinate: ball.locationCoordinate) {
+                                        Image("d"+"\(ball.id)")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(maxWidth: 30)
+                                            .onLongPressGesture {
+                                                showAlert[ball.id-1] = true
+                                            }
+                                            .alert(isPresented: $showAlert[ball.id-1]) {
+                                                Alert(
+                                                    title: Text("Catch the ball?"),
+                                                    message: Text("Distance \(game.ballDistance(userLocation: locationManager.location, ball: ball).formatted())"),
+                                                    dismissButton: .cancel(
+                                                        Text("Catch!"),
+                                                        action: {
+                                                            game.balls[ball.id-1].found = Date()
+                                                            context.insert(game)
+                                                        }
+                                                    )
+                                                )
+                                            }
+                                    }
+                                }
                             }
                         }
-                    }
-                    .mapControls {
-                        MapUserLocationButton()
-                        MapCompass()
-                            .mapControlVisibility(.visible)
-                    }
-                    .frame(width: geometry.size.width, height: geometry.size.height)
-                    Image("marquee")
-                        .resizable()
-                        .scaledToFill()
+
                         .frame(width: geometry.size.width, height: geometry.size.height)
-                        .clipped()
-                        .allowsHitTesting(false)  // Esto permite que los toques pasen a través de la imagen
+                        Image("marquee")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                            .clipped()
+                            .allowsHitTesting(false)  // Esto permite que los toques pasen a través de la imagen
+                    }
                 }
+                .edgesIgnoringSafeArea(.all)
             }
-            .edgesIgnoringSafeArea(.all)
         }
-//        .navigationBarBackButtonHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
-    MapView()
+    MapView(game: Game(initialCoordinates: Coordinates(latitude: 43.21, longitude: -2.91)))
 }

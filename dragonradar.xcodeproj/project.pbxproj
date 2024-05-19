@@ -32,6 +32,8 @@
 		B6ACAE432BF247C300281285 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6ACAE422BF247C300281285 /* Preview Assets.xcassets */; };
 		B6D1943A2BF751ED0062DADE /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D194392BF751ED0062DADE /* MapView.swift */; };
 		B6D1943B2BF751ED0062DADE /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D194392BF751ED0062DADE /* MapView.swift */; };
+		B6F9EBC32BFA5BC600B3CC3B /* ShenronView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9EBC02BFA4F2100B3CC3B /* ShenronView.swift */; };
+		B6F9EBC42BFA5BDF00B3CC3B /* ShenronView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9EBC02BFA4F2100B3CC3B /* ShenronView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,7 @@
 		B6ACAE422BF247C300281285 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B6ACAE4D2BF2492800281285 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B6D194392BF751ED0062DADE /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		B6F9EBC02BFA4F2100B3CC3B /* ShenronView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShenronView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,7 @@
 				B63C09AB2BF4B0CD00B5EB34 /* GameRow.swift */,
 				B6103E762BF4B4DA005EC543 /* GameDetail.swift */,
 				B6D194392BF751ED0062DADE /* MapView.swift */,
+				B6F9EBC02BFA4F2100B3CC3B /* ShenronView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -301,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6F9EBC32BFA5BC600B3CC3B /* ShenronView.swift in Sources */,
 				B6ACAE2C2BF247C200281285 /* ContentView.swift in Sources */,
 				B681351E2BF3A9A4009270E7 /* Game.swift in Sources */,
 				B6574EE02BF7BD5C00F9B841 /* LocationManager.swift in Sources */,
@@ -317,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6F9EBC42BFA5BDF00B3CC3B /* ShenronView.swift in Sources */,
 				B6ACAE3E2BF247C200281285 /* ContentView.swift in Sources */,
 				B681351F2BF3A9A4009270E7 /* Game.swift in Sources */,
 				B6574EE12BF7D57200F9B841 /* LocationManager.swift in Sources */,
