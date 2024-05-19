@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GameRow: View {
-    var game: Game2
+    var game: Game
 
     var body: some View {
         HStack {
@@ -20,7 +20,7 @@ struct GameRow: View {
 
 #Preview {
     Group {
-        GameRow(game: games[0])
-        GameRow(game: games[1])
+        GameRow(game: Game(initialCoordinates: Coordinates(latitude: 43.21, longitude: -2.91), distance: 1))
+//        GameRow(game: Game(distance: 2))
     }
 }

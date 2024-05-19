@@ -7,9 +7,10 @@
 
 import SwiftUI
 import MapKit
+import SwiftData
 
 struct MapView: View {
-    var game: Game2
+    @Query(sort: \Game.start, order: .reverse) var games: [Game]
     @EnvironmentObject var locationManager: LocationManager
     @State private var position: MapCameraPosition = .userLocation(fallback: .automatic)
 
@@ -19,7 +20,7 @@ struct MapView: View {
                 ZStack {
                     Map(position: $position){
                         UserAnnotation()
-                        ForEach(game.balls) { ball in
+                        ForEach(games[0].balls) { ball in
                             Annotation("", coordinate: ball.locationCoordinate) {
                                 Image("d"+"\(ball.id)")
                                     .resizable()
@@ -44,10 +45,10 @@ struct MapView: View {
             }
             .edgesIgnoringSafeArea(.all)
         }
-        .navigationBarBackButtonHidden(true)
+//        .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
-    MapView(game: games[0])
+    MapView()
 }

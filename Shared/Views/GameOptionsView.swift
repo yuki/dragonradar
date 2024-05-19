@@ -6,50 +6,63 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct GameOptionsView: View {
-    @State private var number: Int = 1
+    @EnvironmentObject var locationManager: LocationManager
+    @Environment(\.modelContext) var context
+    @State private var gameDistance: Float = 1
+    @State private var showMapView: Bool = false
 
     var body: some View {
-        NavigationView {
-            VStack {
-                Text("Distancia de juego")
-                HStack {
-                    Button(action: decrement) {
-                        Image(systemName: "minus.circle")
-                    }
-                    .font(.largeTitle)
-                    .padding()
+        if showMapView {
+            MapView()
+        } else {
+            NavigationView {
+                VStack {
+                    Text("Distancia de juego")
+                    HStack {
+                        Button(action: decrement) {
+                            Image(systemName: "minus.circle")
+                        }
+                        .font(.largeTitle)
+                        .padding()
 
-                    Text("\(number) km")
-                        .frame(width: 50)
-                    Button(action: increment) {
-                        Image(systemName: "plus.circle")
+                        Text("\(gameDistance.formatted()) km")
+                            .frame(width: 60)
+                        Button(action: increment) {
+                            Image(systemName: "plus.circle")
+                        }
+                        .font(.largeTitle)
+                        .padding()
                     }
-                    .font(.largeTitle)
-                    .padding()
-                }
 
-                NavigationLink(destination: MapView(game: games[0])){
-                    Text("Empezar")
+                    let userLocation = locationManager.location // else { return }
+                    let coordinates = Coordinates(latitude: userLocation?.coordinate.latitude ?? 43.2630529, longitude: userLocation?.coordinate.longitude ?? -2.9351349)
+                    let game = Game(initialCoordinates: coordinates, distance: gameDistance)
+
+                    Button("Empezar") {
+                        context.insert(game)
+                        showMapView = true
+                    }
                     #if os(iOS)
                     .padding()
                     .background(Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(10)
                     #endif
-                }.navigationBarBackButtonHidden(true)
+                }
             }
         }
     }
     
     func increment() {
-        number += 1
+        gameDistance += 0.2
     }
 
     func decrement() {
-        if (number > 1){
-            number -= 1
+        if (gameDistance > 0.4){
+            gameDistance -= 0.2
         }
     }
 }

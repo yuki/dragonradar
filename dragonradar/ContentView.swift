@@ -7,9 +7,11 @@
 
 import SwiftUI
 import CoreLocation
+import SwiftData
 
 struct ContentView: View {
     @EnvironmentObject var locationManager: LocationManager
+    @Query(sort: \Game.start, order: .reverse) var games: [Game]
 
     var body: some View {
         NavigationView {
@@ -20,14 +22,23 @@ struct ContentView: View {
                     .aspectRatio(contentMode: .fit)
                     .padding(.bottom, 30.0)
                 VStack {
-                    NavigationLink(destination: GameOptionsView()) {
-                        Text("New Game")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .padding()
+                    if (games.count > 0 && games[0].start == games[0].end){
+                        NavigationLink(destination: MapView()) {
+                            Text("Continue Game")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding()
+                        }
+                    } else {
+                        NavigationLink(destination: GameOptionsView()) {
+                            Text("New Game")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding()
+                        }
                     }
-
                     NavigationLink(destination: GamesList()) {
                         Text("Previous Games")
                             .font(.title)

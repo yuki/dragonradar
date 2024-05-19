@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct GameDetail: View {
-    var game: Game2
+    var game: Game
 
     var body: some View {
         ScrollView {
@@ -34,6 +34,7 @@ struct GameDetail: View {
             }
             #endif
             VStack(alignment: .leading) {
+                Text("Distance: \(game.distance.formatted())km")
                 Text("Ended: \(game.end.formatted())")
                     .font(.title2)
                 Divider()
@@ -45,7 +46,7 @@ struct GameDetail: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(maxWidth: 50)
-                        Text("\(ball.found.formatted())")
+                        Text("\(ball.found?.formatted() ?? "")")
                     }
                 }
             }
@@ -57,5 +58,5 @@ struct GameDetail: View {
 }
 
 #Preview {
-    GameDetail(game: games[0])
+    GameRow(game: Game(initialCoordinates: Coordinates(latitude: 43.21, longitude: -2.91), distance: 1))
 }
